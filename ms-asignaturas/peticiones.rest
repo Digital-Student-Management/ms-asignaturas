@@ -1,0 +1,78 @@
+### ============================================================
+###  ms-asignaturas — Pruebas de Endpoints (REST Client VSCode)
+###  Base URL: http://localhost:8081
+### ============================================================
+
+
+### ── 1. Crear una Asignatura (POST) ──────────────────────────
+POST http://localhost:8081/api/asignaturas
+Content-Type: application/json
+
+{
+  "nombre_asignatura": "Programación Orientada a Objetos",
+  "horas_semanales": 4
+}
+
+
+### ── 2. Listar todas las Asignaturas (GET) ───────────────────
+GET http://localhost:8081/api/asignaturas
+
+
+### ── 3. Buscar Asignatura por ID (GET) ───────────────────────
+GET http://localhost:8081/api/asignaturas/2
+
+
+### ── 4. Actualizar una Asignatura (PUT) ─────────────────────
+PUT http://localhost:8081/api/asignaturas/2
+Content-Type: application/json
+
+{
+  "nombre_asignatura": "Programación Orientada a Objetos - Avanzado",
+  "horas_semanales": 6
+}
+
+
+### ── 5. Eliminar una Asignatura (DELETE) ────────────────────
+DELETE http://localhost:8081/api/asignaturas/1
+
+
+### ── 6. Crear una Bitácora (POST) ───────────────────────────
+POST http://localhost:8081/api/bitacoras
+Content-Type: application/json
+
+{
+  "fecha_clase": "2026-05-04",
+  "actividades_realizadas": "Explicación de herencia y polimorfismo con ejemplos prácticos",
+  "observaciones_generales": "Los estudiantes mostraron buen nivel de comprensión",
+  "objetivo_aprendizaje": "Comprender los principios de herencia en Java",
+  "id_asignatura": 2
+}
+
+
+### ── 7. Listar todas las Bitácoras (GET) ────────────────────
+GET http://localhost:8081/api/bitacoras
+
+
+### ── 8. Buscar Bitácora por ID (GET) ────────────────────────
+GET http://localhost:8081/api/bitacoras/1
+
+
+### ── 9. Listar Bitácoras por Asignatura (GET) ───────────────
+GET http://localhost:8081/api/bitacoras/asignatura/1
+
+
+### ── 10. Actualizar una Bitácora (PUT) ──────────────────────
+PUT http://localhost:8081/api/bitacoras/1
+Content-Type: application/json
+
+{
+  "fecha_clase": "2026-05-05",
+  "actividades_realizadas": "Revisión de ejercicios y corrección de errores comunes",
+  "observaciones_generales": "Se reforzaron los conceptos de la clase anterior",
+  "objetivo_aprendizaje": "Afianzar el uso de interfaces y clases abstractas",
+  "id_asignatura": 2
+}
+
+
+### ── 11. Eliminar una Bitácora (DELETE) ─────────────────────
+DELETE http://localhost:8081/api/bitacoras/1
